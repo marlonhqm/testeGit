@@ -1,0 +1,6 @@
+git status
+git add .
+git status
+git commit -m "comentário"
+git status
+git log --oneline
