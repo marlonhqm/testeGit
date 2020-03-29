@@ -7,10 +7,10 @@ git log --oneline
 git graph
 git log --oneline --graph
 git branch (ramo em que o projeto se encontra)
-git checkout <identificação do commit>
-git checkout master (retorna para o ramo master)
+git checkout <identificação do commit> (aponta o HEAD para o commit desejado)
+git checkout master (retorna para o último commit do ramo master)
 git checkout -b <nome do novo ramo a ser criado>
-git diff
+git diff (visualiza as alterações antes de serem adicionadas ao conteiner)
 git restore <arquivo> (desfaz a alteração antes da inserção do arquivo no conteiner)
 git restore --staged <arquio> (tira o arquivo do conteiner)
 git reset --hard <identificação do commit> (exclui o commit)
