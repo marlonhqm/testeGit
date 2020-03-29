@@ -8,8 +8,10 @@ git graph
 git log --oneline --graph
 git branch (ramo em que o projeto se encontra)
 git checkout <identificação do commit>
-git checkout master (retorna para o commit anterior)
+git checkout master (retorna para o ramo master)
+git checkout -b <nome do novo ramo a ser criado>
 git diff
 git restore <arquivo> (desfaz a alteração antes da inserção do arquivo no conteiner)
 git restore --staged <arquio> (tira o arquivo do conteiner)
 git reset --hard <identificação do commit> (exclui o commit)
+git merge <ramo a ser fundido>(sempre aplicar merge a partir do ramo Master)

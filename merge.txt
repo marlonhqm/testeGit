@@ -1,0 +1,248 @@
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git branch
+* master
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline
+0ffbc9a (HEAD -> master) alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git checkout -b ramoTeste
+Switched to a new branch 'ramoTeste'
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git log --oneline
+0ffbc9a (HEAD -> ramoTeste, master) alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git branch
+  master
+* ramoTeste
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ code .
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git status
+On branch ramoTeste
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+        modified:   b.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git add .
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git status
+On branch ramoTeste
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   a.txt
+        modified:   b.txt
+
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git commit -m "modificado arquivos a.txt b.txt"
+[ramoTeste e376b8d] modificado arquivos a.txt b.txt
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git log --oneline
+e376b8d (HEAD -> ramoTeste) modificado arquivos a.txt b.txt
+0ffbc9a (master) alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ touch d.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git status
+On branch ramoTeste
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        d.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git add d.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git status
+On branch ramoTeste
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   d.txt
+
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git commit -m "criado arquivo d.txt"
+[ramoTeste 9a19a0b] criado arquivo d.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 d.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git log --oneline
+9a19a0b (HEAD -> ramoTeste) criado arquivo d.txt
+e376b8d modificado arquivos a.txt b.txt
+0ffbc9a (master) alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git branch
+  master
+* ramoTeste
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git checkou master
+git: 'checkou' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git branch
+  master
+* ramoTeste
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (ramoTeste)
+$ git checkout master
+Switched to branch 'master'
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git branch
+* master
+  ramoTeste
+
+// gerado confilitos nos arquivos a.txt b.txt c.txt para exemplo ditádico
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+        modified:   b.txt
+        modified:   c.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git add .
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git commit -m "modificado arquivos a.txt b.txt c.txt"
+[master d46c18b] modificado arquivos a.txt b.txt c.txt
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline
+d46c18b (HEAD -> master) modificado arquivos a.txt b.txt c.txt
+0ffbc9a alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline --graph
+* d46c18b (HEAD -> master) modificado arquivos a.txt b.txt c.txt
+* 0ffbc9a alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+* 71b1213 a.txt adicionei a linha Entendendo o HEAD
+* 04ed571 criado arquivo comandosGit.txt
+* 37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+* 88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline --graph --all
+* d46c18b (HEAD -> master) modificado arquivos a.txt b.txt c.txt
+| * 9a19a0b (ramoTeste) criado arquivo d.txt
+| * e376b8d modificado arquivos a.txt b.txt
+|/
+* 0ffbc9a alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+* 71b1213 a.txt adicionei a linha Entendendo o HEAD
+* 04ed571 criado arquivo comandosGit.txt
+* 37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+* 88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git branch
+* master
+  ramoTeste
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git merge ramoTeste
+Auto-merging a.txt
+CONFLICT (content): Merge conflict in a.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   d.txt
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   a.txt
+
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master|MERGING)
+$ git add .
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master|MERGING)
+$ git commit -m "fusão de ramos e resolução de conflitos no arquivo a.txt"
+[master 4d3faa1] fusão de ramos e resolução de conflitos no arquivo a.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline
+4d3faa1 (HEAD -> master) fusão de ramos e resolução de conflitos no arquivo a.txt
+d46c18b modificado arquivos a.txt b.txt c.txt
+9a19a0b (ramoTeste) criado arquivo d.txt
+e376b8d modificado arquivos a.txt b.txt
+0ffbc9a alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+71b1213 a.txt adicionei a linha Entendendo o HEAD
+04ed571 criado arquivo comandosGit.txt
+37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$ git log --oneline --graph --all
+*   4d3faa1 (HEAD -> master) fusão de ramos e resolução de conflitos no arquivo a.txt
+|\
+| * 9a19a0b (ramoTeste) criado arquivo d.txt
+| * e376b8d modificado arquivos a.txt b.txt
+* | d46c18b modificado arquivos a.txt b.txt c.txt
+|/
+* 0ffbc9a alterei arquivo comandosGit.txt para listaComandosGit.txt e inclui novo conteudo
+* 71b1213 a.txt adicionei a linha Entendendo o HEAD
+* 04ed571 criado arquivo comandosGit.txt
+* 37bd1cf modificado o arquivo a.txt e criado o arquivo c.txt
+* 88d5226 criado os arquivos a.txt b.txt
+
+Marlon@DESKTOP-9Q57GQQ MINGW64 /e/testeGit (master)
+$
