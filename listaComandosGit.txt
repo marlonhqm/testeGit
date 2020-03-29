@@ -15,3 +15,8 @@ git restore <arquivo> (desfaz a alteração antes da inserção do arquivo no co
 git restore --staged <arquio> (tira o arquivo do conteiner)
 git reset --hard <identificação do commit> (exclui o commit)
 git merge <ramo a ser fundido>(sempre aplicar merge a partir do ramo Master)
+git remote <link> (cria repositório remoto)
+git clone <link> (clona repositório remoto para local)
+git push <link> (envia repositório local para o remoto)
+git push -u <nome do repositótio remoto [origin]> <ramo a ser enviado [master]>
+git pull (traz as alterações do repositóio remoto para o local)
