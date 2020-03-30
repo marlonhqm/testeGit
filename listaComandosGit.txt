@@ -19,4 +19,5 @@ git remote <link> (cria repositório remoto)
 git clone <link> (clona repositório remoto para local)
 git push <link> (envia repositório local para o remoto)
 git push -u <nome do repositótio remoto [origin]> <ramo a ser enviado [master]>
-git pull (traz as alterações do repositóio remoto para o local)
+git pull (traz as alterações do repositório remoto para o local)
+git fetch (usado quando se tem conflito na sincronização, traz as alterações do repositório remoto sem fazer o merge )
